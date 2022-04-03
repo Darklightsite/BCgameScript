@@ -1,5 +1,5 @@
 var config = {
-    bet: { label: 'Javasolt tét', value: (Math.round(currency.amount/7500000 * 100000000) / 100000000), type: 'number' },
+    bet: { label: 'Javasolt tét', value: (Math.round(currency.amount/15000000 * 100000000) / 100000000), type: 'number' },
 
 bettype: {
     value: 'manual', type: 'radio', label: 'Válassz Tét típust!',
@@ -43,7 +43,7 @@ if(bettype==="manual" ) {  egyenleg=stopploss*(-1);
 }
  if(bettype==="auto" ) { egyenleg=currency.amount; 
 }
-bet=Math.round(egyenleg/7500000 * 100000000) / 100000000; 
+bet=Math.round(egyenleg/15000000 * 100000000) / 100000000; 
 mainBet=bet;
     var takeprofit = (Math.round(egyenleg * szazalek * 100000000) / 100000000);
 startegyenleg=egyenleg;
