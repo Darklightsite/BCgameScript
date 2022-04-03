@@ -56,7 +56,7 @@ log.info("Tipus:" +bettype) ;
 game.onBet = function () {
         payout = paying;
         game.bet(bet, payout).then(function (payout) {
-          aktualprofit = Math.round(profit/(egyenleg/100)*1000)/1000;
+         
   if (payout > 1) {
                 winPrice = Math.round((bet * (payout - 1)) * 100000000) / 100000000;
                 profit += winPrice;
@@ -65,6 +65,7 @@ game.onBet = function () {
 loseStreak2 = 0;
                 winStreak += 1;
 multiBetting = multiBettings;
+       aktualprofit = Math.round(profit/(egyenleg/100)*1000)/1000;
                 log.success(winPrice + ", Profit: " + Math.round(profit * 100000000) / 100000000 + " " + aktualprofit + "%");
                 bet = mainBet
                 paying = mainPayout;
@@ -73,6 +74,7 @@ multiBetting = multiBettings;
                 lostP = Math.round(bet * 100000000) / 100000000;
                 profit -= lostP;
                 winStreak = 0;
+                 aktualprofit = Math.round(profit/(egyenleg/100)*1000)/1000;
                 log.error(lostP + ", Profit: " + Math.round(profit * 100000000) / 100000000 + " " + aktualprofit + "%");
                 loseStreak += 1;loseStreak2 += 1;loseStreaktotal +=1;
                 if(maxLoseStreak < loseStreak){
