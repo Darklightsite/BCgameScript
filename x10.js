@@ -63,7 +63,7 @@ game.onBet = function () {
 loseStreak2 = 0;
                 winStreak += 1;
 multiBetting = multiBettings;
-                log.success("Nyert " + winPrice + ", Profit: " + Math.round(profit * 100000000) / 100000000 + " " + aktualprofit + "%");
+                log.success(winPrice + ", Profit: " + Math.round(profit * 100000000) / 100000000 + " " + aktualprofit + "%");
                 bet = mainBet
                 paying = mainPayout;
             }
@@ -71,7 +71,7 @@ multiBetting = multiBettings;
                 lostP = Math.round(bet * 100000000) / 100000000;
                 profit -= lostP;
                 winStreak = 0;
-                log.error("Vesztett " + lostP + ", Profit: " + Math.round(profit * 100000000) / 100000000 + " " + aktualprofit + "%");
+                log.error(lostP + ", Profit: " + Math.round(profit * 100000000) / 100000000 + " " + aktualprofit + "%");
                 loseStreak += 1;loseStreak2 += 1;
                 if(maxLoseStreak < loseStreak){
                     maxLoseStreak = loseStreak;
