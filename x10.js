@@ -99,9 +99,9 @@ payoutChange=paying;
 aktualprofit = Math.round(profit/(egyenleg/100)*1000)/1000;
 if (aktualprofit >= profitszazalek || aktualprofit<=-40) {
 log.success("Start egyenleg:" +egyenleg) ;
-log.success("Start idő :" + timeStart) ;
 finishbalance =egyenleg+profit;
 log.success("Végső egyenleg:" + finishbalance);
+log.success("Start idő :" + timeStart) ;
 log.success("Befejezés ideje:" + getTime()) ;
 log.success("Profit: " + profit+"  //  "+aktualprofit+"%") ;
 game.stop(); 
