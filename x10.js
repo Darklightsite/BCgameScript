@@ -54,8 +54,6 @@ log.info("Egyenleg:" + egyenleg) ;
 log.info("Tipus:" +bettype) ;
 game.onBet = function () {
         payout = paying;
-log.info("Idő:" +getTime()) ;
-        log.info("Tét: " + (Math.round(bet * 100000000) / 100000000) + ", Szorzó: " + payout);
         game.bet(bet, payout).then(function (payout) {
             if (payout > 1) {
                 winPrice = Math.round((bet * (payout - 1)) * 100000000) / 100000000;
