@@ -92,7 +92,7 @@ payoutChange=paying;
                 else{
                     bet = Math.round(bet * multiBetting* 100000000) / 100000000;
                 }
-                log.info("Vesztes sorozat: Max: " + maxLoseStreak2 + " - Jelenleg: " + loseStreak + " time!");                
+                log.info("Vesztes sorozat: Max: " + maxLoseStreak2 + " - Jelenleg: " + loseStreak );                
                 }
         });
 aktualprofit = Math.round(profit/(egyenleg/100)*1000)/1000;
