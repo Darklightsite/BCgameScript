@@ -24,6 +24,7 @@ var multiBettings = multiBetting ;
     var payoutChange = 4.25;    
     var paying = payout;
     var loseStreak = 0;
+    var loseStreaktotal = 0;
     var maxLoseStreak = 0;
     var winStreak = 0;
     var profit = 0;
@@ -60,6 +61,7 @@ game.onBet = function () {
                 winPrice = Math.round((bet * (payout - 1)) * 100000000) / 100000000;
                 profit += winPrice;
                 loseStreak = 0;
+      loseStreaktotal = 0;
 loseStreak2 = 0;
                 winStreak += 1;
 multiBetting = multiBettings;
@@ -72,7 +74,7 @@ multiBetting = multiBettings;
                 profit -= lostP;
                 winStreak = 0;
                 log.error(lostP + ", Profit: " + Math.round(profit * 100000000) / 100000000 + " " + aktualprofit + "%");
-                loseStreak += 1;loseStreak2 += 1;
+                loseStreak += 1;loseStreak2 += 1;loseStreaktotal +=1;
                 if(maxLoseStreak < loseStreak){
                     maxLoseStreak = loseStreak;
                 }
@@ -89,7 +91,7 @@ payoutChange=paying;
                 else{
                     bet = Math.round(bet * multiBetting* 100000000) / 100000000;
                 }
-                log.info("Vesztes sorozat: Max: " + maxLoseStreak2 + " - Jelenleg: " + loseStreak );                
+                log.info("Vesztes sorozat: Max: " + maxLoseStreak2 + " - Jelenleg: " + loseStreaktotal );                
                 }
         });
 aktualprofit = Math.round(profit/(egyenleg/100)*1000)/1000;
