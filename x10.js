@@ -1,8 +1,8 @@
 var config = {
-    bet: { label: 'Javasolt tét', value: (Math.round(currency.amount/15000000 * 100000000) / 100000000), type: 'number' },
+    bet: { label: 'Javasolt tét', value: (Math.round(currency.amount/7500000 * 100000000) / 100000000), type: 'number' },
 
 bettype: {
-    value: 'auto', type: 'radio', label: 'Válassz Tét típust!',
+    value: 'manual', type: 'radio', label: 'Válassz Tét típust!',
     options: [
       { value: 'auto', label: 'Automata, bank alapján ' },
       { value: 'manual', label: 'Veszteség stopp alapján ' }
@@ -10,7 +10,7 @@ bettype: {
   }, 
 stopploss: { label: "veszteség stopp/kockáztatott tőke", value:-1.5, type:'number' }, 
 
-profitszazalek: { label: "Terv Bank%", value: 50, type: "number"}, 
+profitszazalek: { label: "Terv Bank%", value: 100, type: "number"}, 
 }
 function main() {
     
@@ -18,7 +18,7 @@ function main() {
     var mainBet = config.bet.value;
     var payout = 10;
     var mainPayout = payout;
-    var multiBetting = 1.5;
+    var multiBetting = 1.47;
 var multiBettings = multiBetting ;
     var loseStreakToChange = 30;
     var payoutChange = 4.25;    
@@ -43,7 +43,7 @@ if(bettype==="manual" ) {  egyenleg=stopploss*(-1);
 }
  if(bettype==="auto" ) { egyenleg=currency.amount; 
 }
-bet=Math.round(egyenleg/15000000 * 100000000) / 100000000; 
+bet=Math.round(egyenleg/7500000 * 100000000) / 100000000; 
 mainBet=bet;
     var takeprofit = (Math.round(egyenleg * szazalek * 100000000) / 100000000);
 startegyenleg=egyenleg;
@@ -82,10 +82,10 @@ log.success("Aktuális: " + aktualprofit + "%") ;
 if(maxLoseStreak2 < loseStreak2){ 
 maxLoseStreak2 = loseStreak2;
                 }
-                if(loseStreak >= 6){
+                if(loseStreak >= 5){
 loseStreak=0;
 if(paying<=3.5){paying=3.5;}else{
-                    paying -=1.2;}
+                    paying -=1.25;}
 payoutChange=paying;
                     bet = Math.round(bet * (mainPayout/payoutChange)* 100000000) / 100000000;
                 }
