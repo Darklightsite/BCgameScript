@@ -18,7 +18,7 @@ function main() {
     var mainBet = config.bet.value;
     var payout = 10;
     var mainPayout = payout;
-    var multiBetting = 1.45;
+    var multiBetting = 1.5;
 var multiBettings = multiBetting ;
     var loseStreakToChange = 30;
     var payoutChange = 4.25;    
@@ -85,7 +85,7 @@ maxLoseStreak2 = loseStreak2;
                 if(loseStreak >= 6){
 loseStreak=0;
 if(paying<=3.5){paying=3.5;}else{
-                    paying -=1.25;}
+                    paying -=1.2;}
 payoutChange=paying;
                     bet = Math.round(bet * (mainPayout/payoutChange)* 100000000) / 100000000;
                 }
